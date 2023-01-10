@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css"
+        />
+        <!-- <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script> -->
+        <title>ReCaptch V3</title>
+    </head>
+    <body>
+        <div class="ui raised very padded text container segment">
+            <h2 class="ui header">Subscribe Form</h2>
+            <form class="ui form" id="subscribeForm">
+                <div class="field">
+                    <label>First Name</label>
+                    <input
+                        type="text"
+                        name="first-name"
+                        id="first-name"
+                        placeholder="First Name"
+                    />
+                </div>
+                <div class="field">
+                    <label>Last Name</label>
+                    <input
+                        type="text"
+                        name="last-name"
+                        id="last-name"
+                        placeholder="Last Name"
+                    />
+                </div>
+                <button class="ui button g-recaptcha" 
+                        data-sitekey="6LdOw-YjAAAAAI2ZPZnH4HsQkbQybHsaeORUrZPq" 
+                        data-callback='onSubmit' 
+                        data-action='submit'
+                        type="submit">Submit</button>
+            </form>
+
+            <script src="https://www.google.com/recaptcha/api.js"></script>
+            <script>
+                function onSubmit(token) {
+                    document.getElementById('demo-form').submit();
+                }
+            </script>
+        </div>
+    </body>
+</html>
